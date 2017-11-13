@@ -1,15 +1,15 @@
 {
-  "name": "constructor-hangman",
+  "name": "hangman",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "hangman game made using constructors and node.js",
+  "main": "game.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "UNLICENSED",
+  "author": "gnarwall",
+  "license": "ISC",
   "dependencies": {
-    "inquirer": "^3.3.0",
+    "inquirer": "^4.0.0",
     "prompt": "^1.0.0"
   }
 }

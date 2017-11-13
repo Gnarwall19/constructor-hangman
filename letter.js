@@ -1,14 +1,16 @@
-function Letter(ltr) {
-  this.ltr = ltr;
-  this.show = false;
-};
+var choosenWord = require('./word.js');
+var word;
+var lettersArray = [];
+var guesses = [];
 
-Letter.prototype.renderLetter = function() {
-  if (this.show === false) {
-    return "_";
-  } else {
-    return this.ltr;
-  }
+function Letters() {
+    word = choosenWord.randomWord();
+    for (var i = 0; i < word.length; i++) {
+        lettersArray[i] = word[i];
+        guesses[i] = '_';
+        //console.log(lettersArray);
+    }
 };
+//Letters();
 
-module.exports = Letter;
+module.exports = { lettersArray, guesses, Letters };
