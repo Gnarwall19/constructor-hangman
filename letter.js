@@ -8,6 +8,7 @@ function Letters() {
     for (var i = 0; i < word.length; i++) {
         lettersArray[i] = word[i];
         guesses[i] = '_';
+
         //console.log(lettersArray);
     }
 };

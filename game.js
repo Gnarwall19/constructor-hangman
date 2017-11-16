@@ -23,9 +23,9 @@ function Game() {
 }
 
 function promptUser() {
-    console.log(guesses);
+    console.log(guesses.join());
     console.log(guessesLeft + ' GUESSES REMAINING');
-    console.log(lettersArray);
+    //console.log(lettersArray);
 
     inquirer.prompt([
         {
@@ -40,7 +40,7 @@ function promptUser() {
         for (var i = 0; i < lettersArray.length; i++) {
             if (answers.guess === lettersArray[i]) {
                 guesses[i] = lettersArray[i];
-                console.log('CORRECT!');
+                console.log('CORRECT!\nThe Word was: ' + lettersArray.toString());
             }
         }
         if (lettersArray.toString() === guesses.toString()) {
@@ -49,7 +49,7 @@ function promptUser() {
             console.log('WINS: ' + wins + '\nLOSSES: ' + losses);
             newGame();
         } else if (guessesLeft === 0) {
-            console.log('YOU LOSE... GAME OVER.');
+            console.log('YOU LOSE...\nThe Word was: ' + lettersArray.toString() + '\nGAME OVER.');
             losses++;
             console.log('WINS: ' + wins + '\nLOSSES: ' + losses);
             newGame();
@@ -68,7 +68,7 @@ function newGame() {
         }
     ]).then(function (answers) {
         if (answers.reset) {
-            promptUser();
+            Game();
         } else {
             return;
         }
